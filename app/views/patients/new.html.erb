@@ -1,2 +1,12 @@
-<h1>Patients#new</h1>
-<p>Find me in app/views/patients/new.html.erb</p>
+<h1>New Patient/h1>
+<%= form_with(model: @patient, local:true, class:"ui form") do |f| %>
+  <div class="field">
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  </div>
+  <%= f.submit "Create Patient" %>
+<% end %>
