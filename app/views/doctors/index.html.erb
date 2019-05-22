@@ -1,0 +1,14 @@
+<nav class="ui menu">
+  <div class="header item">Docs menu</div>
+  <div class="header item"><%= link_to "New Doc", new_doctor_path %></div>
+</nav>
+
+<h1>Doctors</h1>
+<hr />
+<%= @doctors.each do |doctor| %>
+  <ul>
+  <li>
+  <%= link_to doctor.last_name, doctor_path(doctor) %>
+  </li>
+  </ul>
+<% end %>

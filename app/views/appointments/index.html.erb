@@ -1,0 +1,13 @@
+<h1> Appointments </h1>
+<%= link_to "Add Appointment", new_doctor_appointment_path(@doctor), class: "ui primary button inverted" %>
+
+<h1>Doctor <%= @doctor.last_name %></h1> 
+<% @appointments.each do |appointment| %>
+  <li>
+    <%= "#{appointment.patient.first_name}  #{appointment.patient.last_name}" %>
+    <br />
+    <%= "#{appointment.date}  #{appointment.time}" %>
+    <br />
+    <br />
+  </li>
+<% end %>
