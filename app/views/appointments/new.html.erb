@@ -1,3 +1,18 @@
 <h1>New Appointment</h1>
 <%= form_with(model: [@doctor, @appointment], local: true, class: "ui form" ) do |f| %>
-<%end%>
+<div class="field">
+  <%= f.label :patient %>
+  <%= f.select :patient_id, @patients.collect { |p| [p.full_name, p.id] } %>
+</div>
+<div class="field">
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+</div>
+<div class="field">
+  <%= f.label :time %>
+  <%= f.time_field :time %>
+</div>
+<%= f.submit "Set Appointment" %>
+  <%end%>
+
+

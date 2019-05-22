@@ -4,10 +4,12 @@ class AppointmentsController < ApplicationController
   def index
     @appointments = @doctor.appointments.all.order(:date)
     @doctors = Doctor.all
+    @patients = Patient.all
   end
 
   def new
     @appointment = @doctor.appointments.new
+    @patients = Patient.all
   end
 
   def create
@@ -34,4 +36,6 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:date, :time, :patient_id)
   end
+
+
 end
